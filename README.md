@@ -1,11 +1,10 @@
-# Kong Middleman
+# Kong Dynamic Transform
 
-A Kong plugin that enables an extra HTTP POST request before proxying the original.
+Nhé.
 
 ## Description
 
-In some cases, you may need to validate a request to a separate server or service using custom logic before Kong proxies it to your API.
-Middleman enables you to do that by allowing you to make an extra HTTP request before calling an API endpoint.
+I will write some, eventually.
 
 ## Installation
 
@@ -15,8 +14,8 @@ Navigate to kong/plugins folder and clone this repo
 
 <pre>
 $ cd /path/to/kong/plugins
-$ git clone https://github.com/pantsel/kong-middleman-plugin middleman
-$ cd middleman
+$ git clone https://github.com/arthurfanti/kong-dynamic-transform-plugin.git dynamic-transform
+$ cd dynamic-transform
 $ luarocks make *.rockspec
 </pre>
 

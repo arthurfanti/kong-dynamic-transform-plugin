@@ -1,6 +1,6 @@
-package = "middleman"
+package = "dynamic-transform"
 
-version = "0.1.1-1"
+version = "0.1.0"
 
 -- The version '0.1.1' is the source code version, the trailing '1' is the version of this rockspec.
 -- whenever the source version changes, the rockspec should be reset to 1. The rockspec version is only
@@ -9,12 +9,12 @@ version = "0.1.1-1"
 supported_platforms = {"linux", "macosx"}
 
 source = {
-  url = "https://github.com/pantsel/kong-middleman-plugin",
-  tag = "0.1.1"
+  url = "https://github.com/arthurfanti/kong-dynamic-transform-plugin",
+  tag = "0.1.0"
 }
 
 description = {
-  summary = "A Kong plugin that allows for an extra HTTP POST request before proxying the original.",
+  summary = "Set a flag on requests' header based on its origin.",
   license = "MIT"
 }
 
@@ -24,9 +24,8 @@ dependencies = {
 build = {
   type = "builtin",
   modules = {
-    ["kong.plugins.middleman.access"] = "src/access.lua",
-    ["kong.plugins.middleman.handler"] = "src/handler.lua",
-    ["kong.plugins.middleman.schema"] = "src/schema.lua",
-	["kong.plugins.middleman.json"] = "src/json.lua"
+    ["kong.plugins.dynamic-transform.access"] = "src/access.lua",
+    ["kong.plugins.dynamic-transform.handler"] = "src/handler.lua",
+    ["kong.plugins.dynamic-transform.schema"] = "src/schema.lua"
   }
 }
