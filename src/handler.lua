@@ -1,17 +1,17 @@
 local BasePlugin = require "kong.plugins.base_plugin"
-local access = require "kong.plugins.middleman.access"
+local access = require "kong.plugins.dynamic-transform.access"
 
-local MiddlemanHandler = BasePlugin:extend()
+local DynoTransformHandler = BasePlugin:extend()
 
-MiddlemanHandler.PRIORITY = 900
+DynoTransformHandler.PRIORITY = 900
 
-function MiddlemanHandler:new()
-  MiddlemanHandler.super.new(self, "middleman")
+function DynoTransformHandler:new()
+  DynoTransformHandler.super.new(self, "dynamic-transform")
 end
 
-function MiddlemanHandler:access(conf)
-    MiddlemanHandler.super.access(self)
+function DynoTransformHandler:access(conf)
+    DynoTransformHandler.super.access(self)
   access.execute(conf)
 end
 
-return MiddlemanHandler
+return DynoTransformHandler
