@@ -19,11 +19,11 @@ $ cd dynamic-transform
 $ luarocks make *.rockspec
 </pre>
 
-To make Kong aware that it has to look for the middleman plugin, you'll have to add it to the custom_plugins property in your configuration file.
+To make Kong aware that it has to look for the dynamic-transform plugin, you'll have to add it to the custom_plugins property in your configuration file.
 
 <pre>
 custom_plugins:
-    - middleman
+    - dynamic-transform
 </pre>
 
 Restart Kong and you're ready to go.
@@ -31,7 +31,7 @@ Restart Kong and you're ready to go.
 ## luarocks
 
 <pre>
-$ luarocks install middleman
+$ luarocks install dynamic-transform
 </pre>
 
 
@@ -41,7 +41,7 @@ You can add the plugin on top of an API by executing the following request on yo
 
 <pre>
 $ curl -X POST http://kong:8001/apis/{api}/plugins \
-    --data "name=middleman" \
+    --data "name=dynamic-transform" \
     --data "config.url=http://myserver.io/validate"
 </pre>
 
@@ -55,7 +55,7 @@ $ curl -X POST http://kong:8001/apis/{api}/plugins \
 <tr>
 <td><code>name</code></td>
 <td></td>
-<td>The name of the plugin to use, in this case: <code>middleman</code></td>
+<td>The name of the plugin to use, in this case: <code>dynamic-transform</code></td>
 </tr>
 <tr>
 <td><code>config.url</code><br><em>required</em></td>
