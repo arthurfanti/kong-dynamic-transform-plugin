@@ -1,3 +1,5 @@
+local find = string.find
+-- entries must have colons to set the key and value apart
 local function check_for_value(value)
   for i, entry in ipairs(value) do
     local ok = find(entry, ":")
